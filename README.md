@@ -59,5 +59,23 @@ The website has been tested across major modern web browsers to ensure rendering
 
 ---
 
-&copy; 2026 RS Labs. All rights reserved.
-                               └─────────────────┘
+##Version 2.0
+##Changes Made
+* **Added external stylesheet.
+* **Improved website structure.
+* **Standardised navigation across all pages.
+* **Improved accessibility.
+* **Added responsive design.
+* **Improved typography.
+* **Added Flexbox layouts.
+* **Added CSS Grid layouts.
+* **Added hover effects.
+* **Improved spacing and alignment.
+##Before CSS
+<img width="1897" height="1018" alt="image" src="https://github.com/user-attachments/assets/5ba13120-dd5e-4491-abb8-e362da6ba110" />
+##After CSS
+<img width="1906" height="903" alt="image" src="https://github.com/user-attachments/assets/1885947e-6c86-4dea-a963-b688254f1ea7" />
+
+
+
+
