@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO Optimization -->
+    <title>RS Labs | Product Enquiry & Quote Calculator</title>
+    <meta name="description" content="Submit inquiries for bulk custom orders, wholesale pricing, or individual sizing estimates from RS Labs customer support.">
+    <meta name="keywords" content="bulk order, wholesale gym clothes, apparel quote, RS Labs enquiry">
+    <meta name="robots" content="index, follow">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css.css">
+    <!-- Live Calculation & Error Box Styling -->
+    <style>
+        .error-message {
+            color: #dc2626;
+            font-size: 0.85rem;
+            margin-top: -15px;
+            margin-bottom: 15px;
+            display: none;
+        }
+        .error-message.active {
+            display: block;
+        }
+        .calculation-box {
+            background-color: #e0f2fe;
+            border-left: 4px solid  #2acb55;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        .calculation-box p {
+            margin: 5px 0;
+            text-align: left;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">RS LABS</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="enquiry.html">Enquiry</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Product & Order Enquiry</h2>
+            <p>Have questions regarding custom orders, wholesale pricing, or product specifications? Submit your inquiry below.</p>
+
+            <form id="enquiry-form" action="#" method="post" novalidate>
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" name="fullname" required>
+                <div class="error-message" id="fullname-error">Please enter your full name (minimum 3 characters).</div>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+                <div class="error-message" id="email-error">Please enter a valid email address.</div>
+
+                <label for="product-type">Product Interest:</label>
+                <select id="product-type" name="product-type">
+                    <option value="compression" data-price="899">Compression Wear (R 899 ea)</option>
+                    <option value="shorts" data-price="649">Training Shorts (R 649 ea)</option>
+                    <option value="outerwear" data-price="1299">Hoodies & Outerwear (R 1,299 ea)</option>
+                    <option value="wholesale" data-price="500">Bulk / Wholesale Orders (R 500 ea)</option>
+                </select>
+
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+                <div class="error-message" id="quantity-error">Quantity must be at least 1 unit.</div>
+
+                <!-- Live Dynamic Calculation Response Box -->
+                <div class="calculation-box">
+                    <p>Estimated Unit Price: <span id="unit-price-display">R 899.00</span></p>
+                    <p>Estimated Total Cost: <span id="total-price-display" style="color:  #2acb55;">R 899.00</span></p>
+                </div>
+
+                <label for="message">Enquiry Details:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                <div class="error-message" id="message-error">Please provide details for your enquiry (minimum 10 characters).</div>
+
+                <button type="submit">Submit Enquiry</button>
+            </form>
+            <div id="enquiry-response" style="max-width: 700px; margin: 20px auto; text-align: center;"></div>
+        </section>
+    </main>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO Optimization -->
+    <title>RS Labs | Performance Apparel Catalog & Store</title>
+    <meta name="description" content="Browse RS Labs high-performance gym apparel including compression tops, training shorts, and thermo hoodies. Filter by category or search products.">
+    <meta name="keywords" content="gym shorts, compression shirt, fitness gear, athletic hoodies, powerlifting apparel, RS Labs shop">
+    <meta name="robots" content="index, follow">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css.css">
+    <!-- Search & Lightbox Custom Styling -->
+    <style>
+        .search-controls {
+            max-width: 900px;
+            margin: 0 auto 30px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .search-controls input, .search-controls select {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 0;
+        }
+        /* Modal Lightbox */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            align-items: center;
+            justify-content: center;
+        }
+        .lightbox-modal.active {
+            display: flex;
+        }
+        .lightbox-content {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 600px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+        }
+        .lightbox-content img {
+            max-height: 350px;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            border-radius: 8px;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            color: #333333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">RS LABS</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="enquiry.html">Enquiry</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Our High-Performance Apparel</h2>
+            <p>Explore scientifically engineered sportswear crafted for durability, thermal comfort, and peak output.</p>
+            
+            <!-- Phase 3 Dynamic Search & Category Filtering Controls -->
+            <div class="search-controls">
+                <input type="text" id="product-search" placeholder="Search apparel by name or feature...">
+                <select id="category-filter">
+                    <option value="all">All Categories</option>
+                    <option value="compression">Compression Wear</option>
+                    <option value="shorts">Training Shorts</option>
+                    <option value="outerwear">Outerwear</option>
+                </select>
+            </div>
+
+            <!-- Dynamic Product Grid -->
+            <div class="product-grid" id="product-list">
+                <div class="product-card" data-category="compression" data-name="rs thermal compression top">
+                    <img src="images/apparel-1.jpg" alt="RS Thermal Compression Top" class="gallery-trigger">
+                    <h3>RS Thermal Compression Top</h3>
+                    <p class="price">R 899.00</p>
+                    <p>Designed for thermal regulation and muscular stabilization during heavy lifts.</p>
+                    <button class="btn view-details" data-name="RS Thermal Compression Top" data-price="R 899.00" data-img="images/apparel-1.jpg" data-desc="Features targeted breathable mesh underarm panels, quad-directional elasticity, and anti-microbial fabric blend.">View Details</button>
+                </div>
+
+                <div class="product-card" data-category="shorts" data-name="friction-lock training shorts">
+                    <img src="images/apparel-2.jpg" alt="Friction-Lock Training Shorts" class="gallery-trigger">
+                    <h3>Friction-Lock Shorts</h3>
+                    <p class="price">R 649.00</p>
+                    <p>Ultra-lightweight fabric engineered to minimize friction and heat buildup.</p>
+                    <button class="btn view-details" data-name="Friction-Lock Shorts" data-price="R 649.00" data-img="images/apparel-2.jpg" data-desc="Built with reinforced flat-lock seams, dual side zipper pockets, and moisture-wicking liner.">View Details</button>
+                </div>
+
+                <div class="product-card" data-category="outerwear" data-name="thermo-shield pullover hoodie">
+                    <img src="images/apparel-3.jpg" alt="Thermo-Shield Pullover Hoodie" class="gallery-trigger">
+                    <h3>Thermo-Shield Hoodie</h3>
+                    <p class="price">R 1,299.00</p>
+                    <p>Breathable fleece construction maintaining warm-up core temperature optimal levels.</p>
+                    <button class="btn view-details" data-name="Thermo-Shield Hoodie" data-price="R 1,299.00" data-img="images/apparel-3.jpg" data-desc="Includes water-resistant outer sleeve coating, athletic taper cut, and ergonomic neck collar.">View Details</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Phase 3 Lightbox Modal -->
+    <div id="lightbox-modal" class="lightbox-modal">
+        <div class="lightbox-content">
+            <span class="lightbox-close">&times;</span>
+            <img id="lightbox-img" src="" alt="Enlarged Product View">
+            <h3 id="lightbox-title"></h3>
+            <p id="lightbox-price" class="price" style="color:  #2acb55; font-weight: bold; margin: 10px 0;"></p>
+            <p id="lightbox-desc"></p>
+        </div>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
